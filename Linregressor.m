@@ -2,7 +2,6 @@ classdef Linregressor
 % classdef Linregressor
 % -------------------------------------------------------------------------
 % Carter Mak
-% October, 2019
 % -------------------------------------------------------------------------
 % Description:
 % Linear regression class for calculating and managing a linear regression
@@ -118,7 +117,7 @@ classdef Linregressor
 			obj.SSE_y = obj.sseError;
 			
 			% Weighting matrix
-			W = (1/(obj.SSE_y.^2))*eye(obj.N);
+			W = (1/(obj.SSE_y.^2))*speye(obj.N);
 			
 			% Q matrix (output coefficient uncertainties)
 			obj.Q = inv(A'*W*A);
