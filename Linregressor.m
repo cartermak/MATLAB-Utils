@@ -19,6 +19,7 @@ classdef Linregressor
 		sig_b % Uncertainty in b
 		SSE_y % Absolute uncertainty in y-values (sum of squared error)
 		Q     % Q matrix of uncertainties
+		r     % Pearson correlation coefficient
 	end
 	
 	methods (Access = public) % Publically accessible methods
@@ -88,6 +89,27 @@ classdef Linregressor
 			for i = 1:Ni
 				xNew(i) = getInput(obj,yi(i));
 			end
+		end
+		
+		function r = getCorrCoef(obj) % Get correlation coefficient
+			% -------------------------------------------------------------
+			% Inputs:
+			%	obj - Linregressor object
+			%
+			% Outputs:
+			%	r - Normalized Pearson correlation coefficient
+			% -------------------------------------------------------------
+			
+			% Check whether or not r has already been calculated
+			
+			if isempty(obj.r)
+				% If not, call private method
+				obj.r = obj.calcCorrCoef();
+			end
+			
+			% Return r
+			r = obj.r;
+			
 		end
 		
 	end
@@ -199,6 +221,32 @@ classdef Linregressor
 			
 			% x = (y - b)/m
 			xNew = (yi - obj.b)/obj.m;
+		end
+		
+		function r = calcCorrCoef(obj) % Calculate correlation coefficient
+			% -------------------------------------------------------------
+			% Inputs:
+			%	obj - Linregressor object
+			%
+			% Outputs:
+			%	r - Normalized Pearson correlation coefficient
+			% -------------------------------------------------------------
+			
+			% Calculate mean value of x and y
+			x_bar = mean(obj.x);
+			y_bar = mean(obj.y);
+			
+			% Calculate linear covaraince of x and y
+			cov_xy = sum((obj.x-x_bar).*(obj.y-y_bar));
+			
+			% Calculate standard deviations
+			sig_x = sqrt(sum((obj.x-x_bar).^2));
+			sig_y = sqrt(sum((obj.y-y_bar).^2));
+			
+			% Pearson correlation coefficient calculation
+			r = cov_xy/(sig_x*sig_y);
+			r = abs(r);
+			
 		end
 	end
 end
