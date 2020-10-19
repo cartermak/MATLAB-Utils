@@ -5,4 +5,4 @@
 ---
 
 *Source:* 
-*An Introduction to Error Analysis: the Study of the Uncertainties in Physical Measurements*, by John Robert. Taylor, 2nd ed., University Science Books, 1997, pp. 181–190. 
+*An Introduction to Error Analysis: the Study of the Uncertainties in Physical Measurements*, by John Robert. Taylor, 2nd ed., University Science Books, 1997, pp. 181–217. 
