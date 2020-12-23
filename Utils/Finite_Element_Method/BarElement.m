@@ -1,5 +1,6 @@
 % -------------------------------------------------------------------------
 % Copyright (c) 2020 Carter Mak
+% https://github.com/cartermak/MATLAB-Utils
 % -------------------------------------------------------------------------
 % Description:
 %	Object type to store and process data for a 2D bar element in a finite

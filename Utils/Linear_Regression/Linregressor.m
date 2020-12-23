@@ -2,7 +2,7 @@ classdef Linregressor
 % classdef Linregressor
 % -------------------------------------------------------------------------
 % Copyright (c) 2020 Carter Mak
-% https://github.com/cartermak/MATLAB-Linear-Regression
+% https://github.com/cartermak/MATLAB-Utils
 % -------------------------------------------------------------------------
 % Description:
 % Linear regression class for calculating and managing a linear regression

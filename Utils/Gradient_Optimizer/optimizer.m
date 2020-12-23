@@ -1,7 +1,8 @@
 function x = optimizer(g_fun,x0)
 % function x = optimizer(g_fun,x0)
 % -------------------------------------------------------------------------
-% https://github.com/cartermak/MATLAB-Linear-Regression
+% Copyright (c) 2020 Carter Mak
+% https://github.com/cartermak/MATLAB-Utils
 % -------------------------------------------------------------------------
 % MIT License
 % 

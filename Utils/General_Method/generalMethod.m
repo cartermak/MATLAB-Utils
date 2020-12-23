@@ -2,7 +2,7 @@ function [val,err] = generalMethod(f,inVals,inErrs)
 % function [val,err] = generalMethod(f,inVals,inErrs)
 % -------------------------------------------------------------------------
 % Copyright (c) 2020 Carter Mak
-% https://github.com/cartermak/MATLAB-General-Method
+% https://github.com/cartermak/MATLAB-Utils
 % -------------------------------------------------------------------------
 % Description:
 % Pass an anonymous function handle and cell arrays of input values with
